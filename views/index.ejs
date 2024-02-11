@@ -1,0 +1,82 @@
+<%- include("partials/header.ejs") %>
+
+<% var day = ""; %>
+<% var dayNo = new Date().getDay(); %>
+
+<% var month = "" %>
+<% var monthNo = new Date().getMonth(); %>
+
+<% var dateNo = new Date().getDate(); %>
+    
+<% if(dayNo === 0) {%>
+    <% day = "Sunday" %>
+<% } else if (dayNo === 1) { %>
+    <% day = "Monday" %>
+<% } else if (dayNo === 2) { %>
+    <% day = "Tuesday" %>
+<% } else if (dayNo === 3) { %>
+    <% day = "Wednesday" %>
+<% } else if (dayNo === 4) { %>
+    <% day = "Thursday" %>
+<% } else if (dayNo === 5) { %>
+    <% day = "Friday" %>
+<% } else if (dayNo === 6) { %>
+    <% day = "Saturday" %>
+<% } %>
+    
+<% if(monthNo === 0) { %>
+    <% month = "January" %>
+<% } else if (monthNo === 1) { %>
+    <% month = "February" %>
+<% } else if (monthNo === 2) { %>
+    <% month = "March" %>
+<% } else if (monthNo === 3) { %>
+    <% month = "April" %>
+<% } else if (monthNo === 4) { %>
+    <% month = "May" %>
+<% } else if (monthNo === 5) { %>
+    <% month = "June" %>
+<% } else if (monthNo === 6) { %>
+    <% month = "July" %>
+<% } else if (monthNo === 7) { %>
+    <% month = "August" %>
+<% } else if (monthNo === 8) { %>
+    <% month = "September" %>
+<% } else if (monthNo === 9) { %>
+    <% month = "October" %>
+<% } else if (monthNo === 10) { %>
+    <% month = "November" %>
+<% } else if (monthNo === 11) { %>
+    <% month = "December" %>
+<% } %>
+
+<div id="list">
+
+    <div id="titleCard">
+        <%= day %>, <%= month %> <%= dateNo %>
+    </div>
+
+    <%# var dailyItems = ["Grape", "Banana", "Bubblegum"] %>
+
+    <form action="/submitDaily" method="POST">
+        <div id="listItems">
+            <ul class="list-group">
+                <% if(locals.dailyItems) {%>
+                    <% for(var i = 0; i < dailyItems.length; ++i) { %>
+                        <li class="list-group-item" id="items">
+                            <input class="form-check-input me-1" type="checkbox" value="" id="Checkbox<%= i %>">
+                            <label class="form-check-label" for="firstCheckbox" id="itemText<%= i %>"> <%= dailyItems[i] %> </label>
+                        </li>
+                    <% } %>
+                <% } %>
+                    <li class="list-group-item" id="items entry">
+                        <input type="text" placeholder="New Item" id="tb" name="tb">
+                        <button type="submit" class="btn btn-warning" id="inputBtn">+</button>
+                    </li>
+            </ul>
+        </div>
+    </form>
+
+</div>
+
+<%- include("partials/footer.ejs") %>

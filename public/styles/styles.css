@@ -1,0 +1,81 @@
+body {
+    background-color: white !important;
+}
+
+p {
+    text-align: center;
+}
+
+.copyright {
+    align-items: center;
+}
+
+#list {
+    margin: auto;
+    margin-top: 50px;
+    width: 550px;
+    background-color: rgb(244, 244, 244);
+    padding-top: 25px;
+    padding-bottom: 27px;
+    border-radius: 50px;
+    box-shadow: 10px 10px 5px lightgray;
+}
+
+#titleCard {
+    margin: auto;
+    text-align: center;
+    width: 500px;
+    height: 60px;
+    padding-top: 10px;
+    background-color: gold;
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 12px;
+}
+
+#listItems {
+    margin: auto;
+    width: 500px;
+    padding-top: 25px;
+}
+
+#items {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+[id^="itemText"] {
+    padding-left: 25px;
+}
+
+#entry {
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
+
+#tb {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-color: gold;
+    font-size: 30px;
+    text-align: center;
+}
+
+#inputBtn {
+    color: white;
+    border-radius: 75%;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    margin-left: 30px;
+}
+
+[id^="Checkbox"]:checked + label {
+    text-decoration: line-through;
+}
+
+footer {
+    margin-top: 25px;
+}

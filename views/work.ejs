@@ -1,0 +1,32 @@
+<%- include("partials/header.ejs") %>
+
+<div id="list">
+
+    <div id="titleCard">
+        Work List
+    </div>
+
+<%# var workItems = ["Red", "Green", "Blue"] %>
+
+    <form action="/submitWork" method="POST" onsubmit="addToWorkArray()">
+        <div id="listItems">
+            <ul class="list-group">
+                <% if(locals.workItems) { %>
+                    <% for(var i = 0; i < workItems.length; ++i) {%>
+                        <li class="list-group-item" id="items">
+                            <input class="form-check-input me-1" type="checkbox" value="" id="Checkbox<%= i %>">
+                            <label class="form-check-label" for="firstCheckbox" id="itemText"> <%= workItems[i] %> </label>
+                        </li>
+                    <% } %>
+                <% } %>
+                    <li class="list-group-item" id="items entry">
+                        <input type="text" placeholder="New Item" id="tb" name="wtb">
+                        <button type="submit" class="btn btn-warning" id="inputBtn">+</button>
+                    </li>
+            </ul>
+        </div>
+    </form>
+
+</div>
+
+<%- include("partials/footer.ejs") %>
